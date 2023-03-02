@@ -1,1 +1,0 @@
-import{_ as e,c as t,o,e as s}from"./app.a496942f.js";const f=JSON.parse('{"title":"注意项","description":"","frontmatter":{},"headers":[],"relativePath":"guide/注意事项.md"}'),d={name:"guide/注意事项.md"},i=s("",2),c=[i];function a(l,_,p,r,n,h){return o(),t("div",null,c)}const m=e(d,[["render",a]]);export{f as __pageData,m as default};
