@@ -1,0 +1,42 @@
+{
+  "name": "vue-scroll-components",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "基于vue的滚动组件",
+  "author": "杨柳依依",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/vueScrollComponent-es.js",
+  "main": "./dist/vueScrollComponent-umd.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vueScrollComponent-es.js",
+      "require": "./dist/vueScrollComponent-umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "scripts": {
+    "dev": "vite --host --open",
+    "build": "vite build",
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev docs --host --open",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "dependencies": {
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/compiler-sfc": "^3.2.47",
+    "sass": "^1.58.0",
+    "vite": "^4.1.0",
+    "vitepress": "^1.0.0-alpha.45"
+  }
+}

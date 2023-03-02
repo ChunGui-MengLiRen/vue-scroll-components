@@ -1,0 +1,50 @@
+<script setup>
+import vueScrollComponents from "../../build/vueScrollComponents-es.js";
+import '../../build/style.css'
+import { ref } from 'vue'
+const options = ref({
+    direction: 'left',
+    navStep: 60, //  navigation 滚动步长
+    navEase: 'linear', // navigation 滚动动画
+    navDelay: 400, // navigation 滚动动画时长
+})
+</script>
+
+<template>
+    <vueScrollComponents :options="options" type="navigation" class="wrap">
+        <ul class="item-box">
+            <li v-for="index in 8" :key="index" class="item">
+                {{ index }}
+            </li>
+        </ul>
+    </vueScrollComponents>
+</template>
+
+<style scoped lang="scss">
+.wrap {
+    width: 600px;
+    height: 100px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+        li {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+    }
+
+}
+</style>

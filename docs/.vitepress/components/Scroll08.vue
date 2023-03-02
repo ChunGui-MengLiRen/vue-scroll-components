@@ -1,0 +1,105 @@
+<script setup>
+import vueScrollComponents from "../../build/vueScrollComponents-es.js";
+import { ref, onUnmounted, nextTick } from 'vue'
+const data = ref([
+    {
+        'title': '汉皇重色思倾国，御宇多年求不得。',
+        'auth': '（唐）白乐天'
+    },
+    {
+        'title': '杨家有女初长成，养在深闺人未识。',
+        'auth': '（唐）白乐天'
+    },
+    {
+        'title': '天生丽质难自弃，一朝选在君王侧。',
+        'auth': '（唐）白乐天'
+    },
+    {
+        'title': '回眸一笑百媚生，六宫粉黛无颜色。',
+        'auth': '（唐）白乐天'
+    },
+    {
+        'title': '春寒赐浴华清池，温泉水滑洗凝脂。',
+        'auth': '（唐）白乐天'
+    },
+    {
+        'title': '侍儿扶起娇无力，始是新承恩泽时。',
+        'auth': '（唐）白乐天'
+    },
+    {
+        'title': '云鬓花颜金步摇，芙蓉帐暖度春宵。',
+        'auth': '（唐）白乐天'
+    },
+    {
+        'title': '春宵苦短日高起，从此君王不早朝。',
+        'auth': '（唐）白乐天'
+    },
+    {
+        'title': '承欢侍宴无闲暇，春从春游夜专夜。',
+        'auth': '（唐）白乐天'
+    },
+    {
+        'title': '后宫佳丽三千人，三千宠爱在一身。',
+        'auth': '（唐）白乐天'
+    },
+])
+const options = ref({
+    direction: 'up',
+    speed: 1,
+})
+const timer = ref(null)
+const wrap = ref(null)
+const getTime = () => {
+    const date = new Date()
+    return `${date.getHours()}时${date.getMinutes()}分${date.getSeconds()}秒`
+}
+const add = () => {
+    timer.value = setTimeout(() => {
+        data.value.push({
+            title: getTime() + "新增数据",
+            auth: getTime()
+        })
+        // wrap.value.resetScroll()
+    }, 4000)
+}
+onUnmounted(() => {
+    // clearInterval(timer.value)
+    clearTimeout(timer.value)
+})
+nextTick(add)
+
+</script>
+
+<template>
+    <vueScrollComponents :data="data" :options="options" class="wrap" ref="wrap">
+        <ul class="item">
+            <li v-for="(item, index) in data" :key="index">
+                <span class="title" v-text="item.title"></span>
+                <span class="auth" v-text="item.auth"></span>
+            </li>
+        </ul>
+    </vueScrollComponents>
+</template>
+
+<style scoped lang="scss">
+.wrap {
+    height: 256px;
+    width: 360px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+
+        li {
+            margin: 0;
+            height: 32px;
+            line-height: 32px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+</style>
