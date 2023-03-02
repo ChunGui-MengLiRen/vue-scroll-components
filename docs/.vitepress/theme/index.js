@@ -1,6 +1,5 @@
 // 导入scroll 组件
 import DefaultTheme from "vitepress/theme";
-import vueScrollComponents from "../../../dist/vueScrollComponents-es.js";
 import Scroll01 from "../components/Scroll01.vue";
 import Scroll02 from "../components/Scroll02.vue";
 import Scroll03 from "../components/Scroll03.vue";
@@ -13,7 +12,6 @@ import Scroll08 from "../components/Scroll08.vue";
 export default {
   ...DefaultTheme,
   enhanceApp({ app }) {
-    app.component("vueScrollComponents", vueScrollComponents);
     app.component("Scroll01", Scroll01);
     app.component("Scroll02", Scroll02);
     app.component("Scroll03", Scroll03);
