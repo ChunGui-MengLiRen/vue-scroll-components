@@ -1,10 +1,8 @@
 <script setup>
-// import vueScrollComponent from "../dist/vueScrollComponent-es.js"
-import vueScrollComponent from "../packages/vueScrollComponent/vue3ScrollComponent.vue"
+import vueScrollComponent from "../packages/vueScrollComponents/vue3ScrollComponent.vue"
 import { ref } from 'vue'
 const options1 = ref({
   direction: 'left',
-
 })
 
 const options2 = ref({
@@ -14,7 +12,6 @@ const options2 = ref({
   navDelay: 400, // navigation 滚动动画时长
 
 })
-
 
 
 const scroll = ref(true)
@@ -59,12 +56,6 @@ const listData1 = ref([{
 <template>
   <div>
     <vueScrollComponent :data="listData1" v-model:scroll="scroll" class="warp1" :options="options1">
-      <!-- <ul class="item">
-                                                <li v-for="(item, index) in listData1" :key="index">
-                                                  <span class="title" v-text="item.title"></span>
-                                                  <span class="date" v-text="item.date"></span>
-                                                </li>
-                                              </ul> -->
       <div :style="{ whiteSpace: 'nowrap' }">江天一色无纤尘，皎皎空中孤月轮。回眸一笑百媚生，六宫粉黛无颜色。</div>
     </vueScrollComponent>
 

@@ -1,11 +1,21 @@
 {
   "name": "vue-scroll-components",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "基于vue的滚动组件",
   "author": "杨柳依依",
+  "keywords": [
+    "vue",
+    "seamless",
+    "scroll",
+    "无限滚动"
+  ],
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChunGui-MengLiRen/vue-scroll-components/issues"
+  },
+  "homepage": "https://chungui-mengliren.github.io/vue-scroll-components/",
   "files": [
     "dist"
   ],
@@ -38,5 +48,8 @@
     "sass": "^1.58.0",
     "vite": "^4.1.0",
     "vitepress": "^1.0.0-alpha.45"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.45"
   }
 }
